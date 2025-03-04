@@ -18,7 +18,7 @@ export function activate(context: vscode.ExtensionContext) {
 		console.log('detected image added', uri.fsPath);
 		const result = await vscode.window.showInformationMessage(`Image ${uri.fsPath} has been added, do you want to compress it?`, 'Yes', 'No');
 		if (result === 'Yes') {
-			compressor.compress(uri.fsPath, path.resolve(uri.fsPath, '../', 'out.png'));
+			compressor.compress(uri.fsPath, uri.fsPath);
 		}
 	});
 	watcher.onDidChange(async (uri) => {
