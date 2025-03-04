@@ -1,6 +1,4 @@
-# auto-image-compressor README
-
-This is the README for your extension "auto-image-compressor". After writing up a brief description, we recommend including the following sections.
+# VSCode Extension auto-image-compressor 
 
 ## Features
 
