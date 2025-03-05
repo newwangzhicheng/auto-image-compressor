@@ -1,7 +1,7 @@
 # auto-image-comprossor
 
-[![Visual Studio Marketplace](https://img.shields.io/visual-studio-marketplace/v/jayep.switch2webstorm?label=VS%20Marketplace&style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=jayep.switch2webstorm)
-[![Downloads](https://img.shields.io/visual-studio-marketplace/d/jayep.switch2webstorm?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=jayep.switch2webstorm)
+[![Visual Studio Marketplace](https://img.shields.io/visual-studio-marketplace/v/jayep.auto-image-compressor?label=VS%20Marketplace&style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=jayep.auto-image-compressor)
+[![Downloads](https://img.shields.io/visual-studio-marketplace/d/jayep.auto-image-compressor?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=jayep.auto-image-compressor)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
 ## 🔍 Project Overview

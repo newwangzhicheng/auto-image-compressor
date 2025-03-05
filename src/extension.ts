@@ -13,6 +13,13 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const watcher = new ImageFileWatcher(context);
 	const compressor = new ImageCompressor();
+	
+	// 首次安装检测
+	// const isFirstTime = context.globalState.get('autoImageCompressor.firstInstall', true);
+	// if (isFirstTime) {
+	// 	await vscode.commands.executeCommand('auto-image-compressor.setApiKey');
+	// 	context.globalState.update('autoImageCompressor.firstInstall', false);
+	// }
 	checkApiKey(compressor);
 	watcher.onDidCreate(async(uri) => {
 		console.log('detected image added', uri.fsPath);
