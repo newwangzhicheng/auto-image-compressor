@@ -1,69 +1,58 @@
-# VSCode Extension auto-image-compressor 
+# auto-image-comprossor
 
-## Features
+[![Visual Studio Marketplace](https://img.shields.io/visual-studio-marketplace/v/jayep.switch2webstorm?label=VS%20Marketplace&style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=jayep.switch2webstorm)
+[![Downloads](https://img.shields.io/visual-studio-marketplace/d/jayep.switch2webstorm?style=for-the-badge&logo=visual-studio-code)](https://marketplace.visualstudio.com/items?itemName=jayep.switch2webstorm)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+## 🔍 Project Overview
 
-For example if there is an image subfolder under your extension project workspace:
+A VSCode Extension automatically detects image file added to the project. Compress it by Tinify.
 
-\!\[feature X\]\(images/feature-x.png\)
+Support AVIF, WebP, JPEG and PNG. You can access tinify API Key in https://tinypng.com/developers
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Tinify supports 500 times free compress per month.
 
-## Requirements
+## 🌟 Features
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+- Detect image file change automatically
+- Compress by one click, it will override current file
 
-## Extension Settings
+## 🛠️ Installation Guide
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### Method 1: Install from Extension Marketplace
 
-For example:
+1. Click [here](https://marketplace.visualstudio.com/items?itemName=jayep.auto-image-compressor) to install
+2. Search for "auto-image-compressor" in the Cursor extension marketplace and install
 
-This extension contributes the following settings:
+### Method 2: Local Installation
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+1. Download the latest extension package
+2. In VSCode, select `Extensions` → `...` → `Install from VSIX`
+3. Select the downloaded extension package to complete installation
 
-## Known Issues
+## 🚀 Usage Instructions
+Input your tinify API Key after your first installation. You can also `CMD/CTRL + SHIFT + P` and input **Set Tinify API Key** to update your key.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+### Requirements
 
-## Release Notes
+- VSCode
 
-Users appreciate release notes as you update your extension.
+## 🧑‍💻 Developer Guide
 
-### 1.0.0
+Issues and Pull Requests are welcome to improve this extension.
 
-Initial release of ...
+## 🙋 FAQ
 
-### 1.0.1
+## 📄 License
 
-Fixed issue #.
+This project is licensed under the [MIT License](LICENSE)
 
-### 1.1.0
+## 📮 Feedback
 
-Added features X, Y, and Z.
+If you encounter issues or have suggestions, please provide feedback through:
 
----
+- [Submit GitHub Issue](https://github.com/jayep/auto-image-compressor/issues) 
 
-## Following extension guidelines
+## 🌟 Star History
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+[![Star History Chart](https://api.star-history.com/svg?repos=jayep/auto-image-compressor&type=Date)](https://star-history.com/#jayep/auto-image-compressor&Date)

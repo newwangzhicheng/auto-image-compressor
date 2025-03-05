@@ -1,8 +1,9 @@
-import sharp from 'sharp';
-import fs from 'fs';
-import tinify from 'tinify';
 import * as vscode from 'vscode';
+import * as fs from 'fs';
 import * as path from 'path';
+import sharp from 'sharp';
+import tinify from 'tinify';
+
 class ImageCompressor {
     private tinifyApiKey: string;
     constructor() {
@@ -39,7 +40,6 @@ class ImageCompressor {
         const filename = path.basename(input);
         // 获取输入文件的压缩信息
         const statOrigin = fs.statSync(input);
-        const originSize = statOrigin.size;
         return vscode.window.withProgress({
             location: vscode.ProgressLocation.Notification,
             title: 'Tinify',
@@ -54,8 +54,9 @@ class ImageCompressor {
                 progress.report({ increment: 100, message: `Compressing ${filename} done` });
                 // 获取压缩信息
                 const statCompressed = fs.statSync(output);
-                const savedPercent = Math.round((1 - statCompressed.size / originSize) * 100);
-                vscode.window.showInformationMessage(`Compressing ${filename} done, saved ${savedPercent}%`);
+
+                const savedPercent = Math.round((1 - statCompressed.size / statOrigin.size) * 100);
+                vscode.window.showInformationMessage(`Tinify ${filename}: ${(statOrigin.size / 1024).toFixed(1)}KB -> ${(statCompressed.size / 1024).toFixed(1)}KB, saved ${savedPercent}%`);
                 return true;
             } catch (error) {
                 console.error(error);
