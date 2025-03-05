@@ -14,31 +14,46 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const watcher = new ImageFileWatcher(context);
 	const compressor = new ImageCompressor();
+	checkApiKey(compressor);
 	watcher.onDidCreate(async(uri) => {
 		console.log('detected image added', uri.fsPath);
-		const result = await vscode.window.showInformationMessage(`Image ${uri.fsPath} has been added, do you want to compress it?`, 'Yes', 'No');
-		if (result === 'Yes') {
+		const result = await vscode.window.showInformationMessage(`Image ${uri.fsPath} has been added, do you want to compress it?`, 'Override', 'No');
+		if (result === 'Override') {
 			compressor.compress(uri.fsPath, uri.fsPath);
-		}
-	});
-	watcher.onDidChange(async (uri) => {
-		console.log('detected image modified', uri.fsPath);
-		const result = await vscode.window.showInformationMessage(`Image ${uri.fsPath} has been modified, do you want to compress it?`, 'Yes', 'No');
-		if (result === 'Yes') {
-			console.log('compressing image');
 		}
 	});
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('auto-image-compressor.helloWorld', () => {
+	const disposable = vscode.commands.registerCommand('auto-image-compressor.setApiKey', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from auto-image-compressor!');
+		vscode.window.showInformationMessage('Setting tinify api key for auto-image-compressor!');
+		setApiKey(compressor);
 	});
 
 	context.subscriptions.push(disposable);
+}
+
+async function checkApiKey(compressor: ImageCompressor) {
+	const apiKey = vscode.workspace.getConfiguration('autoImageCompressor').get('tinifyApiKey');
+	if (!apiKey) {
+		const result = await vscode.window.showInformationMessage('Please set the tinify api key, you can get it from https://tinypng.com/developers', 'Set API Key', 'Maybe later');
+		if (result === 'Set API Key') {
+			await setApiKey(compressor);
+		}
+	}
+}
+
+async function setApiKey(compressor: ImageCompressor) {
+	const apiKey = await vscode.window.showInputBox({
+		prompt: 'Please enter the tinify api key',
+	});
+	if (apiKey) {
+		vscode.workspace.getConfiguration('autoImageCompressor').update('tinifyApiKey', apiKey, vscode.ConfigurationTarget.Global);
+		compressor.updateApiKey(apiKey);
+	}
 }
 
 // This method is called when your extension is deactivated

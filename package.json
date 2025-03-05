@@ -16,10 +16,21 @@
   "contributes": {
     "commands": [
       {
-        "command": "auto-image-compressor.helloWorld",
-        "title": "Hello World"
+        "command": "auto-image-compressor.setApiKey",
+        "title": "Set Tinify API Key"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Auto Image Compressor",
+      "properties": {
+        "autoImageCompressor.tinifyApiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Tinify API Key",
+          "scope": "application"
+        }
+      } 
+    }
   },
   "scripts": {
     "vscode:prepublish": "pnpm run package",
@@ -62,6 +73,7 @@
     }
   },
   "dependencies": {
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "tinify": "^1.8.0"
   }
 }
