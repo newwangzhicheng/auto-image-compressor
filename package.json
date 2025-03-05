@@ -2,7 +2,7 @@
   "name": "auto-image-compressor",
   "displayName": "auto-image-compressor",
   "description": "Quickly compress images in your project",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "publisher": "jayep",
   "license": "MIT",
   "repository": {
@@ -16,14 +16,15 @@
     "Other"
   ],
   "activationEvents": [
-    "onStartupFinished"
+    "onStartupFinished",
+    "onCommand:autoImageCompressor.setApiKey"
   ],
   "icon": "images/icon.png",
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "auto-image-compressor.setApiKey",
+        "command": "autoImageCompressor.setApiKey",
         "title": "Set Tinify API Key"
       }
     ],

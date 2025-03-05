@@ -17,7 +17,7 @@ export function activate(context: vscode.ExtensionContext) {
 	// 首次安装检测
 	// const isFirstTime = context.globalState.get('autoImageCompressor.firstInstall', true);
 	// if (isFirstTime) {
-	// 	await vscode.commands.executeCommand('auto-image-compressor.setApiKey');
+	// 	await vscode.commands.executeCommand('autoImageCompressor.setApiKey');
 	// 	context.globalState.update('autoImageCompressor.firstInstall', false);
 	// }
 	checkApiKey(compressor);
@@ -32,7 +32,7 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('auto-image-compressor.setApiKey', () => {
+	const disposable = vscode.commands.registerCommand('autoImageCompressor.setApiKey', () => {
 		// The code you place here will be executed every time your command is executed
 		// Display a message box to the user
 		vscode.window.showInformationMessage('Setting tinify api key for auto-image-compressor!');
