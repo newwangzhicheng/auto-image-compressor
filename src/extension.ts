@@ -12,7 +12,7 @@ export async function activate(context: vscode.ExtensionContext) {
 	// This line of code will only be executed once when your extension is activated
 	console.log('Congratulations, your extension "auto-image-compressor" is now active!');
 
-	const imageWatcher = vscode.workspace.createFileSystemWatcher('**/*.{png,jpg,jpeg,gif,webp}', false, true, true);
+	const imageWatcher = vscode.workspace.createFileSystemWatcher('**/*.{avif,webp,png,jpeg,jpg}', false, true, true);
 	context.subscriptions.push(imageWatcher);
 	
 	await checkApiKey();

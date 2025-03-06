@@ -2,7 +2,7 @@
   "name": "auto-image-compressor",
   "displayName": "auto-image-compressor",
   "description": "Quickly compress images in your project",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "publisher": "jayep",
   "license": "MIT",
   "repository": {
